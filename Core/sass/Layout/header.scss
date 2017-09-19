@@ -1,0 +1,15 @@
+.site-header {
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    z-index: 10; 
+    @include clearit;
+    .treehouse-logo {
+        float: left;
+        padding: 10px 25px;
+        background: rgba(255,255,255,.6);
+        img {
+            width: 180px;
+        }
+    }
+}
