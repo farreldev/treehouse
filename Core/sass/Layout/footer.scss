@@ -1,5 +1,14 @@
 .site-footer {
     width: 100%;
-    padding: 28px 0;
+    padding: 20px 0;
     margin-top: 30px;
+    background: $greenMid;
+    font-size: 14px;
+    color: white;
+    a {
+        color: yellow;
+    }
+    @include breakpoint(mobile) {
+        font-size: 12px;
+    }
 }

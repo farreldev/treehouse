@@ -1,18 +1,44 @@
 .navigasi {
     margin-top: 14px;
     float: right;
+    @include breakpoint(tablet) {
+        overflow-y: hidden;
+        margin-top: 24px;
+    }
+    @include breakpoint(mobile) {
+        float: none;
+        overflow-y: hidden;
+        height: 20px;
+    }
     ul {
+        @include breakpoint(mobile) {
+            padding-top: 20px;
+            transition: height .3s ease-in-out;
+        }
         li {
+            text-align: center;
             display: inline-block;
             font-family: "robotobold";
             font-size: 25px;
             padding: 0 35px;
+            @include breakpoint(tablet) {
+                display: inline-block;
+                font-size: 16px;
+                padding: 0 15px;
+            }
+            @include breakpoint(mobile) {
+                display: block;
+                padding: 0;
+            }
             a {
                 position: relative;
                 padding: 20px 0;
                 text-decoration: none;
                 display: block;
                 color: white;
+                @include breakpoint(mobile) {
+                    color: $greenMid;
+                }
                 &:hover {
                     &:after {
                         transform: scaleX(1);

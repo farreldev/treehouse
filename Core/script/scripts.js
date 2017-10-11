@@ -10,6 +10,25 @@
             dots: true
         });
 
+        $('a.humBtn').click(function(e) {
+            e.preventDefault();
+            $(this).toggleClass('humBtnTrigger');
+            if($(this).hasClass('humBtnTrigger')) {
+                $('nav.navigasi').animate({height: '310px'}, 300);
+            } else {
+                $('nav.navigasi').animate({height: '20px'}, 300);
+            }
+        });
+
+        $('nav.navigasi ul li a').click(function(ev) {
+            ev.preventDefault();
+            var href = $(this).attr('href');
+            $('body, html').stop().animate({
+                scrollTop: ($(href) == "#homepage") ? $(href).offset().top + 10 : $(href).offset().top - 79
+            }, 1000);
+            return false;
+        });
+
         $(window).on('scroll', function() {
             var $scrollPos = $(this).scrollTop(),
                 $wwd = $('.what-we-do'),
@@ -32,6 +51,12 @@
                     $cuImg.eq(0).css({ top: ($scrollPos)/4 +'px' });
                     $cuImg.eq(2).css({top: ($scrollPos)/4 +'px' });
                     $cuImg.eq(4).css({ left: ($scrollPos)/10 +'px' });
+                }
+
+                if($scrollPos > 50) {
+                    $('header.site-header').addClass('onHeadScroll');
+                } else {
+                    $('header.site-header').removeClass('onHeadScroll');
                 }
 
                 if($scrollPos > 80) {

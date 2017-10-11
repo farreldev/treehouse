@@ -6,16 +6,16 @@
 		position: relative;
 		width: 100%;
 		height: 100vh;
-		z-index: 3;
-		&:before {
-			position: absolute;
-			content: '';
-			display: block;
-			width: 100%;
-			height: 100vh;
-			background: rgba(0,0,0,.12);
-			z-index: 2;
-		}
+		// z-index: 1;
+		// &:before {
+		// 	position: absolute;
+		// 	content: '';
+		// 	display: block;
+		// 	width: 100%;
+		// 	height: 100vh;
+		// 	background: rgba(0,0,0,.35);
+		// 	z-index: 2;
+		// }
 		.slider {
 			position: relative;
 			width: 100%;
@@ -429,7 +429,7 @@
 		}
 	}
 	.theArticle {
-		background: url('../../images/treehouse.png') -350px bottom no-repeat;
+		background: url('../../images/treehouse.png') -300px bottom no-repeat;
 		background-size: 55%;
 		article {
 			padding: 20px 30px;
@@ -538,7 +538,7 @@
 
 		.foto-profile {
 			position: relative;
-			margin-top: 100px;
+			margin: 100px auto 0;
 			padding: 50px 30px 50px 50px;
 			width: 100%;
 			z-index: 2;
@@ -547,17 +547,26 @@
 			li {
 				position: relative;
 				float: left;
+				// display: inline-block;
 				text-align: center;
 				width: calc(100% / 5);
 				color: white;
+				@include breakpoint(tablet) {
+					width: 190px;
+					margin: 0 0 30px 18px;
+				}
 				@include breakpoint(mobile) {
-					float: none;
-					margin-left: 15px;
-					margin-right: 0;
-					margin-bottom: 30px;
-					&:last-child {
-						margin-bottom: 0;
-					}
+					// float: none;
+					width: 190px;
+					margin: 0 0 30px 40px;
+				}
+				@include breakpoint(small-mobile) {
+					// float: none;
+					width: 190px;
+					margin: 0 0 30px 20px;
+				}
+				&:last-child {
+					margin-bottom: 0;
 				}
 				article {
 					position: absolute;
@@ -653,33 +662,6 @@
 				width: 200px;
 				margin: 10px auto 0;
 				color: $greenMid;
-			}
-		}
-		.form-contact {
-			.form-control {
-				border-radius: 0;
-				background: $greenMid;
-				color: white;
-				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-					text-align: center;
-					font-family: "robotomedium";
-					color: white;
-				}
-				&::-moz-placeholder { /* Firefox 19+ */
-					text-align: center;
-					font-family: "robotomedium";
-					color: white;
-				}
-				&:-ms-input-placeholder { /* IE 10+ */
-					text-align: center;
-					font-family: "robotomedium";
-					color: white;
-				}
-				&:-moz-placeholder { /* Firefox 18- */
-					text-align: center;
-					font-family: "robotomedium";
-					color: white;
-				}
 			}
 		}
 		#map {
